@@ -20,17 +20,17 @@
 \newcommand{\subproblemCount}{\alph{SubProbNum}}
 
 %Problem Environment
-\newcommand{\problemTypeSetting}[1]{\subsection*{#1}}
-\newenvironment{problem}[1][]
-{\problemTypeSetting{Problem \problemCount. \; #1}
+\newcommand{\problemTypeSetting}[1]{\textbf{#1}}
+\newenvironment{problem}
+{\problemTypeSetting{Problem \problemCount.\;}
 \updateProblemCountHeader}
 
 {\stepcounter{ProbNum}
 \pagebreak}
 
 %Solution tag
-\newcommand{\solutionTypeSetting}[1]{\subsubsection*{#1}}
-\newcommand{\solution}{\solutionTypeSetting{Solution.}}
+\newcommand{\solutionTypeSetting}[1]{\textbf{#1}\quad}
+\newcommand{\solution}{\par\solutionTypeSetting{Solution.}}
 
 %Part tag
 \renewcommand{\part}{\stepcounter{SubProbNum}
@@ -85,8 +85,12 @@
 \clearpage
 \pagenumbering{arabic}
 
-\begin{problem}{}
+\begin{problem}
+
+Example Problem with numbers and crap
+
 \solution
+Example Answer with numbers and crap.
 \end{problem}
 
 \end{document}

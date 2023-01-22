@@ -1,0 +1,85 @@
+\ProvidesPackage{preamble}
+%Macros
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\O}{\mathcal{O}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\F}{\mathcal{D}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Df}{\mathcal{D}f}
+\newcommand{\A}{\mathbf{A}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\z}{\mathbf{z}}
+\renewcommand{\r}{\mathbf{r}}
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\W}{\mathcal{W}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\phi}{\varphi}
+\DeclareMathOperator{\Lip}{Lip}
+\newcommand{\vb}[1]{\mathbf{#1}}
+\newcommand{\bphi}{\boldsymbol{\varphi}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\renewcommand{\tilde}[1]{\widetilde{#1}}
+\newcommand{\proj}{\text{Proj}}
+\newcommand{\remph}[1]{{\color{red}#1}}
+\renewcommand{\l}{L^2}
+\newcommand{\lz}{{\l(\Z_n)}}
+\newcommand{\lzr}{{\l(\Z_n;\R)}}
+\newcommand{\lzd}{{\l(\Z_n^d)}}
+\newcommand{\zd}{{\Z_n^d}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\Re}{\text{Re}}
+\newcommand{\rx}{{\color{red} \mathbf{x}}}
+\newcommand{\bo}{{\color{blue} \mathbf{\circ}}}
+\newcommand{\Lw}[1]{\frac{\partial \L}{\partial W_{#1}}}
+\newcommand{\Lb}[1]{\frac{\partial \L}{\partial b_{#1}}}
+\newcommand{\Lz}[1]{\frac{\partial \L}{\partial z_{#1}}}
+
+\newenvironment{bp}{\color{blue}\begin{proof}}{\end{proof}}
+\newenvironment{bs}{\color{blue}\begin{proof}[Solution]}{\end{proof}}
+\DeclareMathOperator*{\tr}{Trace}
+\DeclareMathOperator*{\sinc}{sinc}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+\newcommand{\Log}{\text{Log}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+%\newtheorem{example}{Example}
+\newtheorem{examplex}{Example}
+\newenvironment{example}{\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}{\popQED\endexamplex} 
+\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{exercisex}[theorem]{Exercise}
+\newenvironment{exercise}{\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\exercisex}{\popQED\endexercisex} 
+\newtheorem{projectx}{Project}
+\newenvironment{project}{\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\projectx}{\popQED\endprojectx} 
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+

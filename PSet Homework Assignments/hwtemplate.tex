@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{preamble}
+
+%Indices
+\newcounter{ProbNum}
+\newcounter{SubProbNum}[ProbNum]
+\newcommand{\updateProblemCountHeader}[1]{\nobreak\extramarks{\arabic{ProbNum}}{}\nobreak{}}
+
+
+%Commands
+\newcommand{\problemCount}{\arabic{ProbNum}}
+\newcommand{\subproblemCount}{\alph{SubProbNum}}
+
+%Problem Environment
+\newcommand{\problemTypeSetting}[1]{\subsection*{#1}}
+\newenvironment{problem}[1][]
+{\problemTypeSetting{Problem \problemCount. \; #1}
+\updateProblemCountHeader}
+
+{\stepcounter{ProbNum}
+\pagebreak}
+
+%Solution tag
+\newcommand{\solutionTypeSetting}[1]{\subsubsection*{#1}}
+\newcommand{\solution}{\solutionTypeSetting{Solution.}}
+
+%Part tag
+\renewcommand{\part}{\stepcounter{SubProbNum}
+\solutionTypeSetting{Part (\alph{SubProbNum}). }}
+
+
+%Page Layout
+ \geometry{
+ letterpaper,
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ bottom = 20 mm,
+ }
+
+%Make enumerate have letters instead of numers
+\renewcommand{\theenumi}{\alph{enumi}}
+
+%HeaderInfo
+\pagestyle{fancy}
+
+\fancyhf[HL]{\hmwkClassNum}
+\fancyhf[HC]{\hmwkAuthorName}
+\fancyhf[HR]{\hmwkName, Problem \firstxmark}
+
+
+%Assignment Info
+\newcommand{\hmwkAuthorName}{Samuel Coyle}
+\newcommand{\hmwkName}{Assignment 1}
+\newcommand{\hmwkProfName}{Prof. John Smith}
+\newcommand{\hmwkClassNum}{MATH 1234}
+\newcommand{\hmwkClassName}{MATH 1234}
+\newcommand{\hmwkDueDate}{1/1/1970}
+
+%Title Page
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClassName:\ \hmwkName}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+    \vspace{0.1in}\large{\textit{\hmwkProfName,\ \hmwkClassNum}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+
+\begin{document}
+\pagenumbering{gobble}
+\clearpage
+\maketitle
+\pagebreak
+\clearpage
+\pagenumbering{arabic}
+
+\begin{problem}{}
+\solution
+\end{problem}
+
+\end{document}

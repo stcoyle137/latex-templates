@@ -24,12 +24,11 @@
 \newenvironment{problem}
 {\problemTypeSetting{Problem \problemCount.\;}
 \updateProblemCountHeader}
-
 {\stepcounter{ProbNum}
 \pagebreak}
 
 %Solution tag
-\newcommand{\solutionTypeSetting}[1]{\textbf{#1}\quad}
+\newcommand{\solutionTypeSetting}[1]{\;\newline\textbf{#1}\quad}
 \newcommand{\solution}{\par\solutionTypeSetting{Solution.}}
 
 %Part tag

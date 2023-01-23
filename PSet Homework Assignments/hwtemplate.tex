@@ -11,8 +11,9 @@
 
 %Indices
 \newcounter{ProbNum}
+\setcounter{ProbNum}{1}
 \newcounter{SubProbNum}[ProbNum]
-\newcommand{\updateProblemCountHeader}[1]{\nobreak\extramarks{\arabic{ProbNum}}{}\nobreak{}}
+\newcommand{\updateProblemCountHeader}{\nobreak\extramarks{\arabic{ProbNum}}{}\nobreak{}}
 
 
 %Commands
@@ -20,16 +21,24 @@
 \newcommand{\subproblemCount}{\alph{SubProbNum}}
 
 %Problem Environment
-\newcommand{\problemTypeSetting}[1]{\textbf{#1}}
-\newenvironment{problem}
-{\problemTypeSetting{Problem \problemCount.\;}
-\updateProblemCountHeader}
-{\stepcounter{ProbNum}
-\pagebreak}
+\newcommand{\problemTypeSetting}[1]{\textbf{#1}\;}
+
+\newenvironment{problem}[1][-1]{
+	\ifnum#1>0
+        	\setcounter{ProbNum}{#1}
+	\fi
+	\problemTypeSetting{Problem \problemCount.}
+	\updateProblemCountHeader
+	\setcounter{SubProbNum}{1}
+}{
+	\stepcounter{ProbNum}
+	\pagebreak
+}
 
 %Solution tag
-\newcommand{\solutionTypeSetting}[1]{\;\newline\textbf{#1}\quad}
-\newcommand{\solution}{\par\solutionTypeSetting{Solution.}}
+\newcommand{\solutionTypeSetting}[1]{\;\newline\par
+\textbf{#1}\quad}
+\newcommand{\solution}{\solutionTypeSetting{Solution.}}
 
 %Part tag
 \renewcommand{\part}{\stepcounter{SubProbNum}
@@ -58,10 +67,10 @@
 
 %Assignment Info
 \newcommand{\hmwkAuthorName}{Samuel Coyle}
-\newcommand{\hmwkName}{Assignment 1}
-\newcommand{\hmwkProfName}{Prof. John Smith}
+\newcommand{\hmwkName}{Homework 42}
+\newcommand{\hmwkProfName}{Prof. John Doe}
 \newcommand{\hmwkClassNum}{MATH 1234}
-\newcommand{\hmwkClassName}{MATH 1234}
+\newcommand{\hmwkClassName}{Class of Math}
 \newcommand{\hmwkDueDate}{1/1/1970}
 
 %Title Page
@@ -75,6 +84,8 @@
 }
 
 \author{\hmwkAuthorName}
+\date{}
+
 
 \begin{document}
 \pagenumbering{gobble}
@@ -85,9 +96,7 @@
 \pagenumbering{arabic}
 
 \begin{problem}
-
 Example Problem with numbers and crap
-
 \solution
 Example Answer with numbers and crap.
 \end{problem}
